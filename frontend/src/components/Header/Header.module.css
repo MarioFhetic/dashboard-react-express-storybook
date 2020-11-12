@@ -1,0 +1,25 @@
+.welcomeBack {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(1, 113, 121, 0.1);
+  border-radius: 20px;
+  padding: 2% 4%;
+}
+
+.welcomeBack .contentText {
+  max-width: 50%;
+  line-height: 180%;
+}
+
+.containerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.contentImg img {
+  width: 150px;
+  object-fit: cover;
+  border-radius: 80px;
+}
