@@ -1,9 +1,22 @@
+h1,
+h3 {
+  font-weight: 700 !important;
+  color: rgba(1, 113, 121, 0.7);
+}
+
+p {
+  font-weight: 300;
+  text-align: justify;
+  max-width: 80%;
+}
+
 .welcomeBack {
   display: flex;
   justify-content: space-between;
   background-color: rgba(1, 113, 121, 0.1);
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 2% 4%;
+  border-left: 10px solid rgba(1, 113, 121, 0.4);
 }
 
 .welcomeBack .contentText {
@@ -18,8 +31,21 @@
   padding: 1rem 0;
 }
 
+.contentText h3 {
+  font-size: 1.3rem;
+}
+
 .contentImg img {
-  width: 150px;
+  width: 250px;
   object-fit: cover;
-  border-radius: 80px;
+  /* border-radius: 80px; */
+}
+
+@media only screen and (max-width: 768px) {
+  .contentImg {
+    display: none;
+  }
+  .contentText {
+    max-width: 100% !important;
+  }
 }

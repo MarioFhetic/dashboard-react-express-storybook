@@ -1,9 +1,16 @@
+h4 {
+  color: rgba(1, 113, 121, 0.4);
+  margin: 0.5rem 0 !important;
+}
+
 .container {
   padding: 1rem 0 !important;
 }
 
 .card {
-  margin-bottom: 1rem !important;
-  box-shadow: 0 10px 20px rgba(139, 139, 139, 0.19),
-    0 6px 6px rgba(126, 125, 125, 0.23) !important;
+  border-radius: 10px !important;
+  padding: 1rem !important;
+  margin-bottom: 1.5rem !important;
+  box-shadow: 0 10px 20px rgba(216, 216, 216, 0.19),
+    0 6px 6px rgba(230, 229, 229, 0.23) !important;
 }

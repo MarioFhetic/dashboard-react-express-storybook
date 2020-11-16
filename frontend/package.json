@@ -6,6 +6,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
     "axios": "^0.21.0",
     "chart.js": "^2.9.4",
     "classnames": "^2.2.6",
@@ -14,6 +15,7 @@
     "react-chartjs-2": "^2.11.1",
     "react-countup": "^4.3.3",
     "react-dom": "^16.11.0",
+    "react-material-alert": "^2.0.1",
     "react-scripts": "3.2.0"
   },
   "scripts": {
@@ -44,5 +46,10 @@
     "@storybook/addon-links": "^5.2.6",
     "@storybook/addons": "^5.2.6",
     "@storybook/react": "^5.2.6"
-  }
+  },
+  "description": "Ce dossier contiendra la partie frontend de votre projet.",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

@@ -1,14 +1,7 @@
 import React from "react";
 
 // components
-import {
-  Cards,
-  CountryPicker,
-  Chart,
-  SideBar,
-  NavBar,
-  Header,
-} from "./components";
+import { Cards, Chart, NavBar, Header } from "./components";
 import styles from "./App.module.css";
 import { fetchData } from "./api"; // "./api/index.js"
 
@@ -35,7 +28,6 @@ class App extends React.Component {
         <div className={styles.container}>
           <Header />
           {/* On passe les data en PROPS à notre composant Cards */}
-          {/* <CountryPicker /> */}
           <Chart />
           <Cards data={data} />
         </div>

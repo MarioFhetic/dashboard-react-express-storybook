@@ -3,6 +3,8 @@ import { Typography } from "@material-ui/core";
 
 import styles from "./Header.module.css";
 
+import Alert from "@material-ui/lab/Alert";
+
 // api fetch
 import { fetchUsers, fetchMeteo } from "../../api";
 
@@ -37,8 +39,13 @@ const Header = () => {
             return (
               <div key={i} className={styles.welcomeBack}>
                 <div className={styles.contentText}>
-                  <h3>Welcome back {item.username}</h3>
-                  <p>{item.welcomeBack}</p>
+                  <h3>Bienvenue {item.username} !</h3>
+                  {item.alert_info && item.alert_success ? (
+                    <Alert severity="info">{item.alert_info}</Alert>
+                  ) : null}
+                  <Alert style={{ marginTop: "1rem" }} severity="success">
+                    {item.alert_success}
+                  </Alert>
                 </div>
                 <div className={styles.contentImg}>
                   <img src={item.urlIcon} alt={`Photo de ${item.username}`} />

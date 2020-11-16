@@ -2,6 +2,8 @@ import React from "react";
 
 // Material equivalent de Bootstrap
 import { Card, CardContent, Typography, Grid } from "@material-ui/core";
+import Alert from "@material-ui/lab/Alert";
+
 import { spacing } from "@material-ui/system";
 
 import CountUp from "react-countup";
@@ -33,11 +35,15 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
     <div className={styles.container}>
       {/* Sur les petits devices (xs = 12) 12 veut dire que ça prendra toute la place de l'écran */}
       {/* md={3} veut dire que sur les écrans moyen et + grands ça prendra que 3/12eme de la place de l'écran */}
-      <Typography variant="h6">Rappel CoVid-19</Typography>
-      <Typography variant="body2">
-        Le port du masque est toujours obligatoire à l'école
+      <Typography variant="h6" className={styles.covidTitle}>
+        Rappel CoVid-19
       </Typography>
-      <Grid container justify="space-around" className={styles.containerCard}>
+      <Typography variant="body2" className={styles.covidsubTitle}>
+        <Alert style={{ marginTop: "1rem" }} severity="warning">
+          Le port du masque est toujours obligatoire à l'école
+        </Alert>
+      </Typography>
+      <Grid container justify="space-between" className={styles.containerCard}>
         <Grid
           item
           component={Card}
@@ -46,7 +52,9 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
           md={3}
         >
           <CardContent>
-            <Typography color="textSeconday">Infectés</Typography>
+            <Typography color="textSeconday" className={styles.titleCard}>
+              Infectés
+            </Typography>
             <Typography variant="h5">
               <CountUp
                 start={0}
@@ -56,10 +64,12 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
               />
             </Typography>{" "}
             {/* {confirmed.value}  */}
-            <Typography color="textSeconday">{getCurrentDate()}</Typography>
+            <Typography color="textSeconday" className={styles.currentDate}>
+              {getCurrentDate()}
+            </Typography>
             <Typography variant="body2">
               {" "}
-              Nombre d'infectés du Covid-19
+              Nombre <strong>d'infectés</strong> du Covid-19
             </Typography>
           </CardContent>
         </Grid>
@@ -74,7 +84,10 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
           md={3}
         >
           <CardContent>
-            <Typography color="textSeconday"> Guéris</Typography>
+            <Typography color="textSeconday" className={styles.titleCard}>
+              {" "}
+              Guéris
+            </Typography>
             <Typography variant="h5">
               {" "}
               <CountUp
@@ -84,10 +97,12 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                 separator={","}
               />
             </Typography>
-            <Typography color="textSeconday">{getCurrentDate()}</Typography>
+            <Typography color="textSeconday" className={styles.currentDate}>
+              {getCurrentDate()}
+            </Typography>
             <Typography variant="body2">
               {" "}
-              Nombre de guéris du Covid-19{" "}
+              Nombre de <strong>guéris</strong> du Covid-19{" "}
             </Typography>
           </CardContent>
         </Grid>
@@ -102,7 +117,10 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
           md={3}
         >
           <CardContent>
-            <Typography color="textSeconday"> Décés</Typography>
+            <Typography color="textSeconday" className={styles.titleCard}>
+              {" "}
+              Décés
+            </Typography>
             <Typography variant="h5">
               {" "}
               <CountUp
@@ -112,10 +130,12 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                 separator={","}
               />
             </Typography>
-            <Typography color="textSeconday">{getCurrentDate()}</Typography>
+            <Typography color="textSeconday" className={styles.currentDate}>
+              {getCurrentDate()}
+            </Typography>
             <Typography variant="body2">
               {" "}
-              Nombre de décés du Covid-19
+              Nombre de <strong>décés</strong> du Covid-19
             </Typography>
           </CardContent>
         </Grid>

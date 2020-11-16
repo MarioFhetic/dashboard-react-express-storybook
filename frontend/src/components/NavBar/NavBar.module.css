@@ -1,3 +1,14 @@
+.containerAppBar {
+  box-shadow: 0 10px 20px rgba(139, 139, 139, 0.19),
+    0 6px 6px rgba(126, 125, 125, 0.23) !important;
+}
+
 .logoAppBar {
   width: 150px;
+}
+
+.imgProfile {
+  width: 30px;
+  object-fit: cover;
+  border-radius: 50%;
 }
