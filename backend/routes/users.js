@@ -8,8 +8,10 @@ router.get("/", function (req, res, next) {
       id: 1,
       username: "Nabil",
       welcomeBack:
-        "N'oublie pas de rendre ton devoir de développement Web, il ne te reste plus que 2 jours. Si tu ne le rends pas tu auras -2 points sur ta moyenne générale !",
-      urlIcon: "logoece.png",
+        "Si tu ne le rends pas tu auras -2 points sur ta moyenne générale !",
+      urlIcon: "svg_user.svg",
+      alert_info: "N'oublie pas de rendre ton devoir de développement web.",
+      alert_success: "Ton DM d'Anglais a bien été envoyé.",
       courses: {
         english: {
           name: "English",

@@ -39,7 +39,10 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
         Rappel CoVid-19
       </Typography>
       <Typography variant="body2" className={styles.covidsubTitle}>
-        <Alert style={{ marginTop: "1rem" }} severity="warning">
+        <Alert
+          style={{ marginTop: "1rem", width: "inherit" }}
+          severity="warning"
+        >
           Le port du masque est toujours obligatoire à l'école
         </Alert>
       </Typography>
