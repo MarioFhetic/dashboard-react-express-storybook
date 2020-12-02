@@ -1,9 +1,7 @@
 import axios from "axios";
 
 const url = "https://covid19.mathdro.id/api";
-const urlLocal = "http://localhost:3001";
-const urlMeteo =
-  "http://api.openweathermap.org/data/2.5/weather?q=paris&appid=5a0d8850b602836aa970b70b8fb5388b&units=metric";
+const urlLocal = "http://localhost:5000/posts";
 
 export const fetchData = async () => {
   try {
@@ -38,47 +36,53 @@ export const fetchDailyData = async () => {
   } catch (error) {}
 };
 
+export const fetchPosts = () => axios.get(urlLocal);
+export const createPost = (newPost) => axios.get(urlLocal, newPost); // on lui envoi newPost
+
+// On faire des actions avec Redux que l'on va dispatch
+// BoilerPlat code -> on va créer files et folder
+
 // fetch Users
 
-export const fetchUsers = async () => {
-  try {
-    const { data } = await axios.get(`${urlLocal}/users`);
+// export const fetchUsers = async () => {
+//   try {
+//     const { data } = await axios.get(`${urlLocal}/users`);
 
-    const modifiedData = data.map((userData) => ({
-      id: userData.id,
-      username: userData.username,
-      welcomeBack: userData.welcomeBack,
-      urlIcon: userData.urlIcon,
-      alert_info: userData.alert_info,
-      alert_success: userData.alert_success,
-    }));
-    return modifiedData;
-  } catch (error) {}
-};
+//     const modifiedData = data.map((userData) => ({
+//       id: userData.id,
+//       username: userData.username,
+//       welcomeBack: userData.welcomeBack,
+//       urlIcon: userData.urlIcon,
+//       alert_info: userData.alert_info,
+//       alert_success: userData.alert_success,
+//     }));
+//     return modifiedData;
+//   } catch (error) {}
+// };
 
-// fetch Charts
+// // fetch Charts
 
-export const fetchCharts = async () => {
-  try {
-    const { data } = await axios.get(`${urlLocal}/charts`);
+// export const fetchCharts = async () => {
+//   try {
+//     const { data } = await axios.get(`${urlLocal}/charts`);
 
-    const modifiedData = data.map((dataChart) => ({
-      id: dataChart.id,
-      label: dataChart.label,
-      labels: dataChart.labels,
-      data: dataChart.data,
-      backgroundColor: dataChart.backgroundColor,
-    }));
+//     const modifiedData = data.map((dataChart) => ({
+//       id: dataChart.id,
+//       label: dataChart.label,
+//       labels: dataChart.labels,
+//       data: dataChart.data,
+//       backgroundColor: dataChart.backgroundColor,
+//     }));
 
-    return modifiedData;
-  } catch (error) {}
-};
+//     return modifiedData;
+//   } catch (error) {}
+// };
 
-// Fetch Meteo
+// // Fetch Meteo
 
-export const fetchMeteo = async () => {
-  try {
-    const { data } = await axios.get(`${urlMeteo}`);
-    return data;
-  } catch (error) {}
-};
+// export const fetchMeteo = async () => {
+//   try {
+//     const { data } = await axios.get(`${urlMeteo}`);
+//     return data;
+//   } catch (error) {}
+// };

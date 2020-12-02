@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Radar } from "react-chartjs-2";
 
 // Fetch data
-import { fetchCharts } from "../../../api/index";
+// import { fetchCharts } from "../../../api/index";
 
 const RadarChart = () => {
-  const [dataCharts, setdataCharts] = useState([]);
-  useEffect(() => {
-    const fetchChartsAPI = async () => {
-      setdataCharts(await fetchCharts());
-    };
+  // const [dataCharts, setdataCharts] = useState([]);
+  // useEffect(() => {
+  //   const fetchChartsAPI = async () => {
+  //     setdataCharts(await fetchCharts());
+  //   };
 
-    fetchChartsAPI(); // on appel la fonction pour l'activer
-  }, []);
+  //   fetchChartsAPI(); // on appel la fonction pour l'activer
+  // }, []);
 
   // dataCharts.map(({ data }, i) => {
   //   console.log(data);
@@ -20,9 +20,9 @@ const RadarChart = () => {
 
   // console.log("ouhoooooooÒ", dataCharts[0].ba);
 
-  dataCharts.map((item, i) => {
-    return console.log(item);
-  });
+  // dataCharts.map((item, i) => {
+  //   return console.log(item);
+  // });
 
   // dataCharts.map(({ data }) => console.log( data));
 
@@ -71,7 +71,7 @@ const RadarChart = () => {
 
   // // data: [20, 50, 90, 25, 40, 65],
 
-  return dataCharts.length ? (
+  return (
     <Radar
       data={{
         labels: [
@@ -84,16 +84,21 @@ const RadarChart = () => {
         ],
         datasets: [
           {
-            label: dataCharts.map(({ label }) => label),
-            data: dataCharts.map(({ data }) => data),
-            backgroundColor: dataCharts.map(
-              ({ backgroundColor }) => backgroundColor
-            ),
+            label: "Total heure par matière",
+            data: [90, 40, 70, 60, 50, 80],
+            backgroundColor: [
+              "rgba(1, 113, 121, 0.2);",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 19, 135, 0.2)",
+              "rgba(150, 148, 35, 0.2)",
+            ],
           },
         ],
       }}
     ></Radar>
-  ) : null;
+  );
 };
 
 export default RadarChart;
