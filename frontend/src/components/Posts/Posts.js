@@ -1,4 +1,5 @@
 import React from "react";
+import { Grid, CircularProgress } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import Post from "./Post/Post";
 
@@ -6,17 +7,27 @@ import useStyles from "./styles";
 
 // Ici on doit fetch nos data depuis le global redux store
 
-const Posts = () => {
+const Posts = ({ setCurrentId }) => {
   const classes = useStyles();
   const posts = useSelector((state) => state.posts); // state.posts ici vient du reducer
 
   console.log(posts);
 
-  return (
-    <>
-      <div>Posts !</div>;
-      <Post />
-    </>
+  return !posts.length ? (
+    <CircularProgress />
+  ) : (
+    <Grid
+      className={classes.container}
+      container
+      alignItems="stretch"
+      spacing={3}
+    >
+      {posts.map((post) => (
+        <Grid key={post._id} item xs={12} sm={6} md={6}>
+          <Post post={post} setCurrentId={setCurrentId} />
+        </Grid>
+      ))}
+    </Grid>
   );
 };
 

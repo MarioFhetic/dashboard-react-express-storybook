@@ -1,3 +1,4 @@
+import { red } from "@material-ui/core/colors";
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles({
@@ -17,9 +18,10 @@ export default makeStyles({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    borderRadius: "15px",
+    borderRadius: "10px",
     height: "100%",
     position: "relative",
+    borderBottom: "10px solid rgba(1, 113, 121, 0.5)",
   },
   overlay: {
     position: "absolute",
@@ -43,10 +45,21 @@ export default makeStyles({
   },
   title: {
     padding: "0 16px",
+    color: "rgba(1, 113, 121, 0.7)",
+    fontWeight: "700",
   },
   cardActions: {
-    padding: "0 16px 8px 16px",
+    padding: "20px",
     display: "flex",
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
+    justifyContent: "center",
+  },
+  detailsItem: {
+    padding: "10px 25px",
+    backgroundColor: "rgba(1, 113, 121, 0.2)",
+    color: "rgba(1, 113, 121, 0.7)",
+    borderRadius: "7px",
+    textTransform: "uppercase",
+    fontWeight: "500",
   },
 });
