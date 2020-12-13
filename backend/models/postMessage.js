@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 const postSchema = mongoose.Schema({
   title: String,
   message: String,
-  creator: String,
+  devoir: String,
   tags: [String],
   selectedFile: String,
   likeCount: {
@@ -17,7 +17,7 @@ const postSchema = mongoose.Schema({
   },
 });
 
-const PostMessage = mongoose.model("PostMessage", postSchema);
+var PostMessage = mongoose.model("PostMessage", postSchema);
 
 export default PostMessage;
 // on export un module mongoose de ce fichier

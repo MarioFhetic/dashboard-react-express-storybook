@@ -25,7 +25,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
   useEffect(() => {
     if (post) setPostData(post);
-  }, [post]); // dans le tableau on dit avec quelle changement la fonciton a l'intérieur du useEffect doit run
+  }, [post]); // dans le tableau on dit avec quelle changement la fonciton a l'intérieur du useEffect doit run, ici a chaque fois que post change sa re-run
 
   const classes = useStyles();
   const dispatch = useDispatch();
